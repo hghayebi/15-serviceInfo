@@ -1,0 +1,40 @@
+.ho-service-main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+  font-size: 13px;
+  border-radius: 5px;
+
+  // background-color: #fff;
+  // color: black;
+  // border: 1px solid black;
+
+  // lvha
+  // &:hover {
+  background-image: linear-gradient(to right, #5543fae1, #2998ff);
+  color: #fff;
+  // }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__heading {
+    font-size: 13px;
+    margin-right: 20px;
+  }
+  transition: all 0.2s;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.2);
+  }
+}
+
+.ho-icon {
+  margin-left: 20px;
+}
+
+.ho-chevron-down {
+  transform: rotateX(180deg);
+}
