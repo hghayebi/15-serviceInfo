@@ -80,17 +80,18 @@
   }
   &--heading {
     font-weight: bold;
+    color: #10375d;
+    font-size: 14px;
   }
 }
 
 .hidden {
   display: none;
-
-  // visibility: hidden;
-  // opacity: 0;
-  // transition: visibility 0s, opacity 0.5s linear;
 }
 
-.visuallyhidden {
-  opacity: 0;
+.ho-sub-service:first-child {
+  // background-color: rgb(230, 229, 229);
+  // background-color: #f1f3f5;
+  // background-color: #e7f5ff;
+  // background-color: #a5d8ff;
 }

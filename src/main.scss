@@ -2,12 +2,21 @@
   font-size: 13px;
   font-family: "iransansweb", sans-serif;
 }
+.ho-h2-container {
+  text-align: center;
+}
 
 .ho-h2 {
   text-align: center;
+  padding: 10px;
   font-size: 20px;
   margin-bottom: 30px;
   font-family: "iransansweb", sans-serif;
+
+  border-bottom: 1px solid #10375d;
+  display: inline-block;
+
+  color: #10375d;
 }
 
 .ho-service-container {

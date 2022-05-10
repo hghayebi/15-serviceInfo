@@ -44,11 +44,11 @@ export default class SubServices {
     subserviceLinkDiv.classList.add("ho-sub-service__link--container");
     // let subserviceLinkIcon = document.createElement("img");
     // subserviceLinkIcon.src = linkIcon;
-    let subserviceLink = document.createElement("a");
+    let subserviceLink = document.createElement("p");
     subserviceLink.classList.add("ho-sub-service__link");
     subserviceLink.classList.add("ho-sub-service--heading");
     subserviceLink.innerText = "لینک دریافت خدمت";
-    subserviceLink.target = "_blank";
+    // subserviceLink.target = "_blank";
     // subserviceLink.appendChild(subserviceLinkIcon);
     subserviceLinkDiv.appendChild(subserviceLink);
 
@@ -58,7 +58,7 @@ export default class SubServices {
     );
     // let subserviceDetailesLinkIcon = document.createElement("img");
     // subserviceDetailesLinkIcon.src = detailesIcon;
-    let subserviceDetailesLink = document.createElement("a");
+    let subserviceDetailesLink = document.createElement("p");
     subserviceDetailesLink.classList.add("ho-sub-service__detailes--link");
     subserviceDetailesLink.classList.add("ho-sub-service--heading");
     subserviceDetailesLink.innerText = "جزییات خدمت";
