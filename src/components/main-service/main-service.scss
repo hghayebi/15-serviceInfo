@@ -6,13 +6,17 @@
   font-size: 13px;
   border-radius: 5px;
 
-  // background-color: #fff;
+  // background-color: #706f74;
   // color: black;
   // border: 1px solid black;
 
   // lvha
   // &:hover {
-  background-image: linear-gradient(to right, #5543fae1, #2998ff);
+  background-image: linear-gradient(
+    to right,
+    rgba(#5543fae1, 0.7),
+    rgba(#2998ff, 1)
+  );
   color: #fff;
   // }
 
