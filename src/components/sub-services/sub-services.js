@@ -12,13 +12,11 @@ export default class SubServices {
 
     const subServicesContainer = document.createElement("div");
     subServicesContainer.classList.add("ho-sub-services");
+    subServicesContainer.classList.add("collapsible");
 
     this.serviceContainer.appendChild(subServicesContainer);
 
     // service detailes heading --------------------------------------------
-
-    let subServiceContainer0 = document.createElement("div");
-    subServiceContainer0.classList.add("ho-sub-service--0");
 
     let subServiceContainer = document.createElement("div");
     subServiceContainer.classList.add("ho-sub-service");
@@ -132,23 +130,60 @@ export default class SubServices {
     });
 
     // hidden class
-    subServicesContainer.classList.add("hidden");
+    subServicesContainer.classList.add("collapsed");
     // subServicesContainer.querySelector
     this.serviceContainer
       .querySelector(".ho-service-main")
       .addEventListener("click", function (e) {
-        if (subServicesContainer.classList.contains("hidden")) {
-          subServicesContainer.classList.remove("hidden");
-          // e.classList.remove("ho-background-image");
-          // console.log(e);
-          e.target.querySelector(".ho-icon").classList.add("ho-chevron-down");
-          return;
-        }
+        const content = document.querySelector(".collapsible");
+        expandElement(subServicesContainer, "collapsed");
+        e.target.querySelector(".ho-icon").classList.toggle("ho-chevron-down");
 
-        subServicesContainer.classList.add("hidden");
-        // e.target.classList.add("ho-background-image");
-        e.target.querySelector(".ho-icon").classList.remove("ho-chevron-down");
-        return;
+        // if (subServicesContainer.classList.contains("hidden")) {
+        //   subServicesContainer.classList.remove("hidden");
+        //   // e.classList.remove("ho-background-image");
+        //   // console.log(e);
+        //   e.target.querySelector(".ho-icon").classList.add("ho-chevron-down");
+        //   return;
+        // }
+
+        // subServicesContainer.classList.add("hidden");
+        // // e.target.classList.add("ho-background-image");
+        // e.target.querySelector(".ho-icon").classList.remove("ho-chevron-down");
+        // return;
       });
   }
+}
+
+// ------------------------------------------------
+
+function expandElement(elem, collapseClass) {
+  // debugger;
+  elem.style.height = "";
+  elem.style.transition = "none";
+
+  const startHeight = window.getComputedStyle(elem).height;
+
+  // Remove the collapse class, and force a layout calculation to get the final height
+  elem.classList.toggle(collapseClass);
+  const height = window.getComputedStyle(elem).height;
+
+  // Set the start height to begin the transition
+  elem.style.height = startHeight;
+
+  // wait until the next frame so that everything has time to update before starting the transition
+  requestAnimationFrame(() => {
+    elem.style.transition = "";
+
+    requestAnimationFrame(() => {
+      elem.style.height = height;
+    });
+  });
+
+  // Clear the saved height values after the transition
+  elem.addEventListener("transitionend", function temp() {
+    elem.style.height = "";
+    // elem.removeEventListener("transitionend", arguments.callee);
+    elem.removeEventListener("transitionend", temp);
+  });
 }

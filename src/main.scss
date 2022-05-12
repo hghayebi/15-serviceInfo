@@ -1,6 +1,13 @@
 .ho-main-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+
   font-size: 13px;
   font-family: "iransansweb", sans-serif;
+  max-width: 1170px;
+  margin: 10px auto;
 }
 .ho-h2-container {
   text-align: center;
@@ -20,21 +27,15 @@
 }
 
 .ho-service-container {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
-
   // background-color: hotpink;
 
-  font-family: cursive;
-  font-size: 13px;
-  max-width: 1170px;
-  margin: 10px auto;
+  // font-size: 13px;
+
+  margin-bottom: 5px;
 
   // border: 10px solid red;
 
-  box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.2);
+  // box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.2);
   // padding: 5px;
-  border-radius: 5px;
+  // border-radius: 50px;
 }
