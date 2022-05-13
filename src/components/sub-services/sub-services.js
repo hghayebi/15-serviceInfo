@@ -143,10 +143,39 @@ export default class SubServices {
           subserviceLinkDiv.classList.add("hidden");
           subserviceDetailesLinkDiv.classList.add("hidden");
 
+          // ------
+
+          const t001 = `<div class="ho-ionicon ho-ionicon--remove-circle ho-hidden">
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="ionicon  ho-ionicon--remove-circle " viewBox="0 0 512 512"><title>Remove Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm80 224H176a16 16 0 010-32h160a16 16 0 010 32z"/></svg>
+
+</div>
+
+<div class="ho-ionicon ho-ionicon--add-circle">
+
+<svg xmlns="http://www.w3.org/2000/svg" class="ionicon  ho-ionicon--add-circle" viewBox="0 0 512 512"><title>Add Circle</title><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm80 224h-64v64a16 16 0 01-32 0v-64h-64a16 16 0 010-32h64v-64a16 16 0 0132 0v64h64a16 16 0 010 32z"/></svg>
+
+</div>`;
+
+          let plusMinesCircle = document.createElement("div");
+          plusMinesCircle.innerHTML = t001;
+          // -----------
+
+          subServicenamediv.prepend(plusMinesCircle);
+
           subServicenamediv.addEventListener("click", function () {
             subServicenCodeDiv.classList.toggle("hidden");
             subserviceLinkDiv.classList.toggle("hidden");
             subserviceDetailesLinkDiv.classList.toggle("hidden");
+
+            subServicenamediv.classList.toggle("ho-sub-service--main-color");
+            subServicenamediv
+              .querySelectorAll(".ho-ionicon")
+              .forEach((elem) => {
+                // console.log(elem);
+                elem.classList.toggle("ho-fill-white");
+                elem.classList.toggle("ho-hidden");
+              });
           });
         }
       }
