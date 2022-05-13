@@ -1,6 +1,12 @@
 import "./sub-services.scss";
+import "./sub-services-small-screen.scss";
+
 // import linkIcon from "../../icon/link-icon.png";
 // import detailesIcon from "../../icon/detailes-icon.png";
+
+const mediaQueryLessthan640 = window.matchMedia("(max-width: 640px)");
+const mediaQueryGreaterthan640 = window.matchMedia("(min-width: 641px)");
+
 export default class SubServices {
   constructor(serviceContainer) {
     this.serviceContainer = serviceContainer;
@@ -127,6 +133,31 @@ export default class SubServices {
       subServiceContainer.appendChild(subserviceDetailesLinkDiv);
 
       subServicesContainer.appendChild(subServiceContainer);
+
+      // handle small screens----------start
+
+      function handleMediaQueryLessThan640(e) {
+        console.log(e.matches);
+        if (e.matches) {
+          subServicenCodeDiv.classList.add("hidden");
+          subserviceLinkDiv.classList.add("hidden");
+          subserviceDetailesLinkDiv.classList.add("hidden");
+
+          subServicenamediv.addEventListener("click", function () {
+            subServicenCodeDiv.classList.toggle("hidden");
+            subserviceLinkDiv.classList.toggle("hidden");
+            subserviceDetailesLinkDiv.classList.toggle("hidden");
+          });
+        }
+      }
+
+      mediaQueryLessthan640.addEventListener(
+        "change",
+        handleMediaQueryLessThan640
+      );
+      handleMediaQueryLessThan640(mediaQueryLessthan640);
+
+      // handle small screens----------end
     });
 
     // hidden class
@@ -137,24 +168,20 @@ export default class SubServices {
       .addEventListener("click", function (e) {
         const content = document.querySelector(".collapsible");
         expandElement(subServicesContainer, "collapsed");
-        e.target.querySelector(".ho-icon").classList.toggle("ho-chevron-down");
-
-        // if (subServicesContainer.classList.contains("hidden")) {
-        //   subServicesContainer.classList.remove("hidden");
-        //   // e.classList.remove("ho-background-image");
-        //   // console.log(e);
-        //   e.target.querySelector(".ho-icon").classList.add("ho-chevron-down");
-        //   return;
-        // }
-
-        // subServicesContainer.classList.add("hidden");
-        // // e.target.classList.add("ho-background-image");
-        // e.target.querySelector(".ho-icon").classList.remove("ho-chevron-down");
-        // return;
       });
   }
 }
 
+// handle normal screens----------start
+function handleMediaQueryGreaterThan640(e) {
+  window.location.reload();
+}
+
+mediaQueryGreaterthan640.addEventListener(
+  "change",
+  handleMediaQueryGreaterThan640
+);
+// handle normal screens----------end
 // ------------------------------------------------
 
 function expandElement(elem, collapseClass) {

@@ -1,4 +1,5 @@
 import "./main-service.scss";
+import "./main-service-small-screen.scss";
 
 export default class MainService {
   constructor(serviceContainer) {
