@@ -137,7 +137,7 @@ export default class SubServices {
       // handle small screens----------start
 
       function handleMediaQueryLessThan640(e) {
-        console.log(e.matches);
+        // console.log(e.matches);
         if (e.matches) {
           subServicenCodeDiv.classList.add("hidden");
           subserviceLinkDiv.classList.add("hidden");
